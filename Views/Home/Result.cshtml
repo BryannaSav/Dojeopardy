@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('.general1').click(function(){
+                $('.general1').html("<p>What LINQ command would I use to get a single item matching some provided criteria if it exsists, or null if it doesn't</p>");
+            })
+            $('.general2').click(function(){
+                $('.general2').html("<p>What data type do linq queries return? </p>");
+            })
+            $('.general3').click(function(){
+                $('.general3').html("<p>What is the => and what is it used for</p>");
+            })
+            $('.predict1').click(function(){
+                $('.predict1').html("<a href='/predict/1'>Click me for code!</a>");
+            })
+            $('.predict2').click(function(){
+                $('.predict2').html("<a href='/predict/2'>Click me for code!</a>");
+            })
+            $('.predict3').click(function(){
+                $('.predict3').html("<a href='/predict/3'>Click me for code!</a>");
+            })
+            $('.buggy1').click(function(){
+                $('.buggy1').html("<a href='/buggy/1'>Click me for code!</a>");
+            })
+            $('.buggy2').click(function(){
+                $('.buggy2').html("<a href='/buggy/2'>Click me for code!</a>");
+            })
+            $('.buggy3').click(function(){
+                $('.buggy3').html("<a href='/buggy/3'>Click me for code!</a>");
+            })
+            $('.write1').click(function(){
+                $('.write1').html("<p>get all pets who have been demo-ed more than 10 times</p>");
+            })
+            $('.write2').click(function(){
+                $('.write2').html("<p>get one pet that is named Rover and is a dog</p>");
+            })
+            $('.write3').click(function(){
+                $('.write3').html("<p>get pets with e in their name, ordered by how many times they've been demo-ed</p>");
+            })
+        })
+    </script>
+
+    <style>
+        .column{
+            border: 5px solid black;
+            width: 200px;
+            height: 550px;
+            display: inline-block;
+            vertical-align: top;
+            padding: 3px;
+        }
+        .question{
+            border-top: 1px solid black;
+            /* width: 247px; */
+            height: 150px;
+            text-align: center;
+            padding-top: 30px;
+        }
+        .pet{
+            border-top: 1px dotted black;
+            margin-top: 5px;
+        }
+        p{
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    @model List<Pet>
+    <div class="column">
+        <h3>GENERAL LINQOLOGY</h3>
+        <div class="question general1">
+            <h1>100</h1>
+        </div>
+        <div class="question general2">
+            <h1>200</h1>
+        </div>
+        <div class="question general3">
+            <h1>300</h1>
+        </div>
+    </div>
+    <div class="column">
+        <h3>PREDICT THE OUTPUT</h3>
+        <div class="question predict1">
+            <h1>100</h1>
+        </div>
+        <div class="question predict2">
+            <h1>200</h1>
+        </div>
+        <div class="question predict3">
+            <h1>300</h1>
+        </div>
+    </div>
+    <div class="column">
+        <h3>SWAT THAT BUG </h3>
+        <div class="question buggy1">
+            <h1>100</h1>
+        </div>
+        <div class="question buggy2">
+            <h1>200</h1>
+        </div>
+        <div class="question buggy3">
+            <h1>300</h1>
+        </div>
+    </div>
+    <div class="column">
+        <h3>WRITE THAT QUERY</h3>
+        <div class="question write1">
+            <h1>100</h1>
+        </div>
+        <div class="question write2">
+            <h1>200</h1>
+        </div>
+        <div class="question write3">
+            <h1>300</h1>
+        </div>
+    </div>
+    <div class="column">
+        @foreach(var pet in @Model){
+            <p class="pet">Name: @pet.Name ( @pet.Type )</p>
+            <p >used in demos @pet.TimesUsedInDemos times</p>
+        }
+    </div>
+</body>
+</html>
